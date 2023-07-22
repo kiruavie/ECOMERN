@@ -5,6 +5,7 @@ export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:4000" }),
   endpoints: (builder) => ({
+    //inscription
     signup: builder.mutation({
       query: (user) => ({
         url: "/users/signup",
@@ -13,6 +14,8 @@ export const appApi = createApi({
       }),
     }),
 
+    //connexion
+
     login: builder.mutation({
       query: (user) => ({
         url: "/users/login",
@@ -20,9 +23,19 @@ export const appApi = createApi({
         body: user,
       }),
     }),
+
+    //création de produit
+    createProduct: builder.mutation({
+      query: (product) => ({
+        url: "/products",
+        body: product,
+        method: "POST",
+      }),
+    }),
   }),
 });
 
-export const { useSignupMutation, useLoginMutation } = appApi;
+export const { useSignupMutation, useLoginMutation, useCreateProductMutation } =
+  appApi;
 
 export default appApi;
