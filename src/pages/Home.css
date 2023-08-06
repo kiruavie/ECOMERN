@@ -1,4 +1,4 @@
-.category-title {
+.category-tile {
   height: 250px;
   background-size: cover;
   background-position: center;
@@ -22,7 +22,7 @@ img.card-img-top.product-preview-img {
   border-radius: 10px;
 }
 
-.category-title:hover {
+.category-tile:hover {
   transform: scale(1.05);
 }
 

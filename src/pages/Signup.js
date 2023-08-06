@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../styles/Signup.css";
+import "./Signup.css";
 import { useSignupMutation } from "../services/appApi";
 
 function Signup() {
-  const [email, SetEmail] = useState("");
-  const [password, SetPassword] = useState("");
-  const [name, SetName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [signup, { error, isLoading, isError }] = useSignupMutation();
 
   function handleSignup(e) {
@@ -20,27 +20,27 @@ function Signup() {
       <Row>
         <Col md={6} className="signup__form--container">
           <Form style={{ width: "100%" }} onSubmit={handleSignup}>
-            <h1>Créer un compte</h1>
+            <h1>Create an account</h1>
             {isError && <Alert variant="danger">{error.data}</Alert>}
             <Form.Group>
-              <Form.Label>Nom Complet</Form.Label>
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Entrez votre nom"
+                placeholder="Your name"
                 value={name}
                 required
-                onChange={(e) => SetName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
             </Form.Group>
 
             <Form.Group>
-              <Form.Label>Adresse Email</Form.Label>
+              <Form.Label>Email Address</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Entrez votre adresse email"
+                placeholder="Enter email"
                 value={email}
                 required
-                onChange={(e) => SetEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
@@ -48,20 +48,20 @@ function Signup() {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Mot de passe"
+                placeholder="Enter Password"
                 value={password}
                 required
-                onChange={(e) => SetPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
 
             <Form.Group>
               <Button type="submit" disabled={isLoading}>
-                Créer un compte
+                Create account
               </Button>
             </Form.Group>
             <p className="pt-3 text-center">
-              Vous avez déjà un compte ? <Link to="/login">Se connecter</Link>{" "}
+              Don't have an account? <Link to="/login">Login</Link>{" "}
             </p>
           </Form>
         </Col>

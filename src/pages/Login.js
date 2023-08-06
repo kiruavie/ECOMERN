@@ -1,56 +1,53 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Button, Form, Alert } from "react-bootstrap";
+import { Button, Col, Container, Form, Row, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useLoginMutation } from "../services/appApi";
 
-const Login = () => {
-  const [email, SetEmail] = useState("");
-  const [password, SetPassword] = useState("");
-  const [login, { error, isLoading, isError }] = useLoginMutation();
-
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [login, { isError, isLoading, error }] = useLoginMutation();
   function handleLogin(e) {
     e.preventDefault();
     login({ email, password });
   }
-
   return (
     <Container>
       <Row>
         <Col md={6} className="login__form--container">
           <Form style={{ width: "100%" }} onSubmit={handleLogin}>
-            <h1>Se connecter à votre compte</h1>
+            <h1>Login to your account</h1>
             {isError && <Alert variant="danger">{error.data}</Alert>}
             <Form.Group>
-              <Form.Label>Adresse Email</Form.Label>
+              <Form.Label>Email Address</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Entrez votre adresse Email"
+                placeholder="Enter email"
                 value={email}
                 required
-                onChange={(e) => SetEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Mot de passe</Form.Label>
+              <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Entrez le mot de passe"
+                placeholder="Enter Password"
                 value={password}
                 required
-                onChange={(e) => SetPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
 
             <Form.Group>
               <Button type="submit" disabled={isLoading}>
-                Se connecter
+                Login
               </Button>
             </Form.Group>
 
             <p className="pt-3 text-center">
-              Vous n'avez pas de comptet ?{" "}
-              <Link to="/signup">Créer un compte</Link>{" "}
+              Don't have an account? <Link to="/signup">Create account</Link>{" "}
             </p>
           </Form>
         </Col>
@@ -58,6 +55,6 @@ const Login = () => {
       </Row>
     </Container>
   );
-};
+}
 
 export default Login;
