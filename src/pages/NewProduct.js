@@ -67,10 +67,7 @@ function NewProduct() {
     <Container>
       <Row>
         <Col md={6} className="new-product__form--container">
-          <Form
-            style={{ width: "100%", backgroundColor: "green" }}
-            onSubmit={handleSubmit}
-          >
+          <Form style={{ width: "100%" }} onSubmit={handleSubmit}>
             <h1 className="mt-4">Créer un produit</h1>
             {isSuccess && (
               <Alert variant="success">Produit crée avec succès</Alert>
