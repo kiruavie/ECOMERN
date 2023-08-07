@@ -20,10 +20,10 @@ function Signup() {
       <Row>
         <Col md={6} className="signup__form--container">
           <Form style={{ width: "100%" }} onSubmit={handleSignup}>
-            <h1>Create an account</h1>
+            <h1>Crée an comptu</h1>
             {isError && <Alert variant="danger">{error.data}</Alert>}
             <Form.Group>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Nom</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Your name"
@@ -34,7 +34,7 @@ function Signup() {
             </Form.Group>
 
             <Form.Group>
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>Addresse email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter email"
@@ -45,7 +45,7 @@ function Signup() {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Mot de passe</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Enter Password"
@@ -57,11 +57,12 @@ function Signup() {
 
             <Form.Group>
               <Button type="submit" disabled={isLoading}>
-                Create account
+                Crée un compte
               </Button>
             </Form.Group>
             <p className="pt-3 text-center">
-              Don't have an account? <Link to="/login">Login</Link>{" "}
+              Vous n'avez encore pas de compte ?{" "}
+              <Link to="/login">Se connecter</Link>{" "}
             </p>
           </Form>
         </Col>

@@ -138,7 +138,7 @@ function EditProductPage() {
 
             <Form.Group className="mb-3">
               <Button type="button" onClick={showWidget}>
-                Upload Images
+                Télécharger l'image
               </Button>
               <div className="images-preview-container">
                 {images.map((image) => (
@@ -157,7 +157,7 @@ function EditProductPage() {
 
             <Form.Group>
               <Button type="submit" disabled={isLoading || isSuccess}>
-                Update Product
+                Mettre à jour le produit
               </Button>
             </Form.Group>
           </Form>

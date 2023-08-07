@@ -24,7 +24,7 @@ function Home() {
         alt=""
       />
       <div className="featured-products-container container mt-4">
-        <h2>Last products</h2>
+        <h2>Derniers produits</h2>
         {/* last products here */}
         <div className="d-flex justify-content-center flex-wrap">
           {lastProducts.map((product) => (
@@ -40,7 +40,7 @@ function Home() {
               textDecoration: "none",
             }}
           >
-            See more {">>"}
+            Voir plus {">>"}
           </Link>
         </div>
       </div>
@@ -52,7 +52,7 @@ function Home() {
         />
       </div>
       <div className="recent-products-container container mt-4">
-        <h2>Categories</h2>
+        <h2>Catégories</h2>
         <Row>
           {categories.map((category) => (
             <LinkContainer

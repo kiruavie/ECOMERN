@@ -6,7 +6,11 @@
 .logo {
   width: 50px;
 }
-
+#logoSite {
+  width: 100px; /* Définir la largeur souhaitée */
+  height: 100px;
+  border-radius: 50%;
+}
 #cartcount {
   font-size: 10px;
   background-color: red;

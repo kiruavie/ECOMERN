@@ -16,10 +16,10 @@ function Login() {
       <Row>
         <Col md={6} className="login__form--container">
           <Form style={{ width: "100%" }} onSubmit={handleLogin}>
-            <h1>Login to your account</h1>
+            <h1>Se connecter à votre compte</h1>
             {isError && <Alert variant="danger">{error.data}</Alert>}
             <Form.Group>
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>Addresse email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter email"
@@ -30,7 +30,7 @@ function Login() {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Mot de passe</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Enter Password"
@@ -47,7 +47,8 @@ function Login() {
             </Form.Group>
 
             <p className="pt-3 text-center">
-              Don't have an account? <Link to="/signup">Create account</Link>{" "}
+              Vous n'avez pas de compte ?{" "}
+              <Link to="/signup">Créer un compte</Link>{" "}
             </p>
           </Form>
         </Col>

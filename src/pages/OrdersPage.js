@@ -29,17 +29,17 @@ function OrdersPage() {
   }
 
   if (orders.length === 0) {
-    return <h1 className="text-center pt-3">No orders yet</h1>;
+    return <h1 className="text-center pt-3">pas encore de commandes</h1>;
   }
 
   return (
     <Container>
-      <h1 className="text-center">Your orders</h1>
+      <h1 className="text-center">Vos commandes</h1>
       <Table responsive striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
-            <th>Status</th>
+            <th>Statut</th>
             <th>Date</th>
             <th>Total</th>
           </tr>
@@ -60,7 +60,7 @@ function OrdersPage() {
               </td>
               <td>{order.date}</td>
 
-              <td>${order.total}</td>
+              <td>FCFA{order.total}</td>
             </tr>
           ))}
         </tbody>

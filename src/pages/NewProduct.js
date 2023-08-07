@@ -67,14 +67,17 @@ function NewProduct() {
     <Container>
       <Row>
         <Col md={6} className="new-product__form--container">
-          <Form style={{ width: "100%" }} onSubmit={handleSubmit}>
-            <h1 className="mt-4">Create a product</h1>
+          <Form
+            style={{ width: "100%", backgroundColor: "green" }}
+            onSubmit={handleSubmit}
+          >
+            <h1 className="mt-4">Créer un produit</h1>
             {isSuccess && (
-              <Alert variant="success">Product created with succcess</Alert>
+              <Alert variant="success">Produit crée avec succès</Alert>
             )}
             {isError && <Alert variant="danger">{error.data}</Alert>}
             <Form.Group className="mb-3">
-              <Form.Label>Product name</Form.Label>
+              <Form.Label>Nom du produit du product</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter product name"
@@ -85,7 +88,7 @@ function NewProduct() {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Product description</Form.Label>
+              <Form.Label>Description</Form.Label>
               <Form.Control
                 as="textarea"
                 placeholder="Product description"
@@ -97,10 +100,10 @@ function NewProduct() {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Price($)</Form.Label>
+              <Form.Label>Prix</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Price ($)"
+                placeholder="Prix (FCFA)"
                 value={price}
                 required
                 onChange={(e) => setPrice(e.target.value)}
@@ -111,21 +114,20 @@ function NewProduct() {
               className="mb-3"
               onChange={(e) => setCategory(e.target.value)}
             >
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Categorie</Form.Label>
               <Form.Select>
                 <option disabled selected>
                   -- Select One --
                 </option>
-                <option value="technology">technology</option>
-                <option value="tablets">tablets</option>
-                <option value="phones">phones</option>
-                <option value="laptops">laptops</option>
+                <option value="technology">Technologie</option>
+                <option value="phones">Téléphones</option>
+                <option value="laptops">Ordinateurs</option>
               </Form.Select>
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Button type="button" onClick={showWidget}>
-                Upload Images
+                Télécharger l'image
               </Button>
               <div className="images-preview-container">
                 {images.map((image) => (
@@ -144,7 +146,7 @@ function NewProduct() {
 
             <Form.Group>
               <Button type="submit" disabled={isLoading || isSuccess}>
-                Create Product
+                Crée le produit
               </Button>
             </Form.Group>
           </Form>

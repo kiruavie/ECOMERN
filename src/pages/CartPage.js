@@ -32,10 +32,10 @@ function CartPage() {
     <Container style={{ minHeight: "95vh" }} className="cart-container">
       <Row>
         <Col>
-          <h1 className="pt-2 h3">Shopping cart</h1>
+          <h1 className="pt-2 h3">Panier d'achat</h1>
           {cart.length === 0 ? (
             <Alert variant="info">
-              Shopping cart is empty. Add products to your cart
+              Le panier est vide. Ajouter des produits à votre panier
             </Alert>
           ) : (
             <Elements stripe={stripePromise}>
@@ -50,10 +50,10 @@ function CartPage() {
                 <thead>
                   <tr>
                     <th>&nbsp;</th>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Sous total</th>
                   </tr>
                 </thead>
                 <tbody>

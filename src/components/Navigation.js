@@ -35,7 +35,14 @@ function Navigation() {
     <Navbar bg="light" expand="lg">
       <Container>
         <LinkContainer to="/">
-          <Navbar.Brand>Ecomern</Navbar.Brand>
+          <Navbar.Brand>
+            <img
+              src="/assets/JiiStore.png"
+              alt="Logo de l'entreprise"
+              className="img-fluid"
+              id="logoSite"
+            />
+          </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -43,7 +50,7 @@ function Navigation() {
             {/* if no user */}
             {!user && (
               <LinkContainer to="/login">
-                <Nav.Link>Login</Nav.Link>
+                <Nav.Link>Connexion</Nav.Link>
               </LinkContainer>
             )}
             {user && !user.isAdmin && (
@@ -76,20 +83,20 @@ function Navigation() {
                   {user.isAdmin && (
                     <>
                       <LinkContainer to="/admin">
-                        <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                        <NavDropdown.Item>Tableau de bord</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/new-product">
-                        <NavDropdown.Item>Create Product</NavDropdown.Item>
+                        <NavDropdown.Item>Crée un produit</NavDropdown.Item>
                       </LinkContainer>
                     </>
                   )}
                   {!user.isAdmin && (
                     <>
                       <LinkContainer to="/cart">
-                        <NavDropdown.Item>Cart</NavDropdown.Item>
+                        <NavDropdown.Item>Panier</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/orders">
-                        <NavDropdown.Item>My orders</NavDropdown.Item>
+                        <NavDropdown.Item>Mes commandes</NavDropdown.Item>
                       </LinkContainer>
                     </>
                   )}
@@ -100,7 +107,7 @@ function Navigation() {
                     onClick={handleLogout}
                     className="logout-btn"
                   >
-                    Logout
+                    se deconnecter
                   </Button>
                 </NavDropdown>
               </>
@@ -132,7 +139,7 @@ function Navigation() {
             </p>
           ))
         ) : (
-          <p>No notifcations yet</p>
+          <p>pas encore de notification</p>
         )}
       </div>
     </Navbar>
