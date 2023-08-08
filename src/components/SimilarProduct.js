@@ -1,6 +1,6 @@
 import React from "react";
 import { Badge, Card } from "react-bootstrap";
-import LinkContainer from "react-router-bootstrap/LinkContainer";
+import LinkContainer from "react-router-bootstrap/LinkContainer.js";
 
 function SimilarProduct({ _id, name, category, pictures }) {
   return (

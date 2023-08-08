@@ -35,7 +35,7 @@ function App() {
         dispatch(addNotification(msgObj));
       }
     });
-  }, [dispatch, user._id, user.isAdmin]);
+  }, [dispatch, user]);
   return (
     <div className="App">
       <BrowserRouter>

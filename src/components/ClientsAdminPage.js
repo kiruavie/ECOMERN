@@ -22,7 +22,7 @@ function ClientsAdminPage() {
 
   if (loading) return <Loading />;
   if (users?.length === 0)
-    return <h2 className="py-2 text-center">No users yet</h2>;
+    return <h2 className="py-2 text-center">pas encore d'utilisateurs</h2>;
 
   return (
     <Table responsive striped bordered hover>

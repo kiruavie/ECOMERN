@@ -77,7 +77,7 @@ function NewProduct() {
               <Form.Label>Nom du produit du product</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter product name"
+                placeholder="Entrez le nom du produit"
                 value={name}
                 required
                 onChange={(e) => setName(e.target.value)}
@@ -88,8 +88,8 @@ function NewProduct() {
               <Form.Label>Description</Form.Label>
               <Form.Control
                 as="textarea"
-                placeholder="Product description"
-                style={{ height: "100px" }}
+                placeholder="Description du produit"
+                style={{ height: "100px", resize: "none" }}
                 value={description}
                 required
                 onChange={(e) => setDescription(e.target.value)}
