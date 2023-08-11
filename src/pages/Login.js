@@ -9,7 +9,7 @@ function Login() {
   const [login, { isError, isLoading, error }] = useLoginMutation();
   function handleLogin(e) {
     e.preventDefault();
-    login({ email, password });
+    login({ email, password }).unwrap();
   }
   return (
     <Container>

@@ -12,7 +12,7 @@ function Signup() {
 
   function handleSignup(e) {
     e.preventDefault();
-    signup({ name, email, password });
+    signup({ name, email, password }).unwrap();
   }
 
   return (
